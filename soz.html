@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input {
+            margin-left: 10px;
+            width: 300px;
+            height: 25px;
+            padding: 10px;
+            font: bold 15px sans-serif;
+        }
+
+        #inp {
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 25px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-left: 150px;">So'z</h1>
+    <input type="text" id="input">
+    <input type="button" value="OK" onclick="soz()" id="inp">
+    <p id="res"></p>
+    <script>
+        function soz() {
+            var a = document.getElementById('input').value;
+            var b = 0;
+            var c = 0;
+            var p = document.getElementById('res');
+            for (var i = 0; i < a.length; i++) {
+                if ('aouieAOUIE'.search(a[i]) > -1) {
+                    b++;
+                }
+                if ('qwrtypsdfghjklmnbvcxzQWRTYPSDFGHJKLMNBVCXZ'.search(a[i]) > -1) {
+                    c++;
+                }
+
+            }
+            p.innerHTML = '"' + a + ' "' + ' so\'zida ' + "<br>" + c + ' ta undosh ' + "<br>" + b +
+            " ta unli  harf bor";
+            document.getElementById('input').value = null;
+        }
+    </script>
+</body>
+
+</html>
